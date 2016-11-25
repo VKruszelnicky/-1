@@ -91,7 +91,7 @@ end;
 procedure TForm1.Button1Click(Sender: TObject);
  var t:tstringlist;
 begin
-  Memo1.Lines.LoadFromfile('F:\ugadai\rez.txt');
+Memo1.Lines.LoadFromfile('F:\ugadai\rez.txt'); {TODO: Заменить на относительный путь}
 t:=TStringlist.Create;
 t.addstrings(memo1.lines);
 t.sort;
@@ -113,14 +113,14 @@ Edit2.Clear;
 
 with TStringList.Create do
   try
-   if FileExists('F:\ugadai\rez.txt')
-   then LoadFromFile('F:\ugadai\rez.txt');
+  if FileExists('F:\ugadai\rez.txt') {TODO: Заменить на относительный путь}
+  then LoadFromFile('F:\ugadai\rez.txt'); {TODO: Заменить на относительный путь}
 
    for i := 0 to memo1.Lines.Count-1 do
    begin
     Add(memo1.Lines.Strings[i]);
    end;
-   SaveToFile('F:\ugadai\rez.txt');
+   SaveToFile('F:\ugadai\rez.txt'); {TODO: Заменить на относительный путь}
   finally
     Free;
    Memo1.Lines.Clear;
