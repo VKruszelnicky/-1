@@ -1,0 +1,72 @@
+object Form1: TForm1
+  Left = 133
+  Height = 329
+  Top = 331
+  Width = 457
+  Caption = 'Form1'
+  ClientHeight = 329
+  ClientWidth = 457
+  OnCreate = FormCreate
+  LCLVersion = '1.6.0.4'
+  object Label2: TLabel
+    Left = 136
+    Height = 15
+    Top = 8
+    Width = 68
+    Caption = 'Введите имя'
+    ParentColor = False
+    OnClick = Label2Click
+  end
+  object Memo1: TMemo
+    Left = 16
+    Height = 176
+    Top = 64
+    Width = 424
+    OnChange = Memo1Change
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 24
+    Height = 25
+    Top = 256
+    Width = 75
+    Caption = 'Победители'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 136
+    Height = 25
+    Top = 256
+    Width = 75
+    Caption = 'Начать'
+    OnClick = Button2Click
+    TabOrder = 2
+  end
+  object Button3: TButton
+    Left = 248
+    Height = 25
+    Top = 256
+    Width = 75
+    Caption = 'Выход'
+    OnClick = Button3Click
+    TabOrder = 3
+  end
+  object Edit2: TEdit
+    Left = 131
+    Height = 23
+    Top = 32
+    Width = 80
+    OnChange = Edit2Change
+    TabOrder = 4
+  end
+  object Button4: TButton
+    Left = 136
+    Height = 25
+    Top = 296
+    Width = 75
+    Caption = 'Сохранить'
+    OnClick = Button4Click
+    TabOrder = 5
+  end
+end
