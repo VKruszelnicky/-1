@@ -55,9 +55,9 @@ TargetNumber:=Random(10)+1;
            Step:=1;
 While Step<=10 Do
 Begin
-        repeat
+        do
         PlayerShot:=StrToIntDef(InputBox('INPUT YOUR DATA', 'Введите число:', ''), 0);
-        until inttostr(PlayerShot) <> '';
+        while inttostr(PlayerShot) <> '';
 
        If (TargetNumber<>PlayerShot) Then
                begin
