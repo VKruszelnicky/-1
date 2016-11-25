@@ -1,7 +1,4 @@
 unit Unit1;
-
-{$mode objfpc}{$H+}
-
 interface
 
 uses
@@ -58,9 +55,9 @@ TargetNumber:=Random(10)+1;
            Step:=1;
 While Step<=10 Do
 Begin
-        repeat
-        PlayerShot:=StrToIntDef(InputBox('Ввод данных', 'Введите число:', ''), 0);
-        until inttostr(PlayerShot) <> '';
+        do
+        PlayerShot:=StrToIntDef(InputBox('INPUT YOUR DATA', 'Введите число:', ''), 0);
+        while inttostr(PlayerShot) <> '';
 
        If (TargetNumber<>PlayerShot) Then
                begin
@@ -136,7 +133,7 @@ end;
 procedure TForm1.FormCreate(Sender: TObject);
 
 begin
-Button2.Enabled := false;
+Button2.Visible := false;
 randomize();
 Button4.Visible:= false;
 end;
