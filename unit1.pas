@@ -20,6 +20,8 @@ type
     Edit2: TEdit;
     Label2: TLabel;
     Memo1: TMemo;
+    OpenDialog1:TOpenDialog;
+    SaveDialog1:TSaveDialog;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -37,7 +39,7 @@ type
 
   var
   Form1: TForm1;
-
+F:textfile;
 implementation
 
 {$R *.lfm}
@@ -48,7 +50,7 @@ procedure TForm1.Memo1Change(Sender: TObject);
 begin
 
 end;
-
+assignfile(F,'a1.txt');
 Procedure TForm1.Button2Click(Sender: TObject);
 Var PName: String; TargetNumber, PlayerShot, Step: Integer;
 Begin
@@ -91,7 +93,7 @@ end;
 procedure TForm1.Button1Click(Sender: TObject);
  var t:tstringlist;
 begin
-  Memo1.Lines.LoadFromfile('F:\ugadai\rez.txt');
+  Memo1.Lines.LoadFromfile(OpenDialog1);
 t:=TStringlist.Create;
 t.addstrings(memo1.lines);
 t.sort;
@@ -113,14 +115,14 @@ Edit2.Clear;
 
 with TStringList.Create do
   try
-   if FileExists('F:\ugadai\rez.txt')
-   then LoadFromFile('F:\ugadai\rez.txt');
+   if FileExists(OpenDialog1)
+   then LoadFromFile(OpenDialog1);
 
    for i := 0 to memo1.Lines.Count-1 do
    begin
     Add(memo1.Lines.Strings[i]);
    end;
-   SaveToFile('F:\ugadai\rez.txt');
+   SaveToFile(SaveDialog1);
   finally
     Free;
    Memo1.Lines.Clear;
